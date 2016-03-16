@@ -1,7 +1,7 @@
 # How to set up a private Git server on Debian 8.0 (jessie) - raspberry pi (including gitweb)
-just a few notes with the exact commands to set up your own private git server on Debian 8.0 jessie (for me on a raspberry pi 1).
-this will use SSH keys for authentication
-this is a virgin system so I will show you my exact steps:
+Just a few notes with the exact commands to set up your own private git server on Debian 8.0 jessie (for me on a raspberry pi 1). I did this instructions because I felt the need to do as no 100% ACCURATE and correct information for this can be found online.
+* It will use SSH keys for authentication.
+* this is a virgin system so I will show you my exact steps:
 
 my hostname is ```raspberry```, my FQDN is ```raspberry.skynet```
 ```bash
