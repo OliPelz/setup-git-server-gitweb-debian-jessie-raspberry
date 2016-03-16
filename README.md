@@ -53,12 +53,14 @@ systemctl start apache2
 ```
 Now on any client in the same network browse to the following url to browse gitweb
 which should give you an overview with the ```my_first_repo``` listing (or whatever you called your first repos).
-use any modern web browser ```http://raspberry.skynet/gitweb``` 
-Now for any client in the same network on the commandline to access our git server we will use SSH keys for authentication. You can do this without setting a SSH key password which will make your git server access very convenient, but using a password is recommended as it adds another layer of security. Use the following command replacing ```youremail@mailprovider.com``` with your email:
+use any modern web browser 
+```http://raspberry.skynet/gitweb``` 
+
+Now for any client in the same network on the commandline to access our git server we will use SSH keys for authentication. You can do this without setting a SSH key password which will make your git server access very convenient, but using a password is recommended as it adds another layer of security. Use the following command replacing ```youremail@mailprovider.com``` with your email (this has to be done locally on your client):
 ```bash
 ssh-keygen -C "youremail@mailprovider.com"
 ```
-Finally add our newly generated SSH key for authentication to the git user on the git server. This will be used for authentication:
+Finally add our newly generated SSH key for authentication to the git user on the git server. This will be used for authentication, (do this next command locally on your client to transfer automatically to your server):
 ```bash
 cat ~/.ssh/id_rsa.pub | ssh git@raspberry.skynet "cat >> ~/.ssh/authorized_keys"
 ```
@@ -71,7 +73,7 @@ git add HELLO_WORLD.TXT
 git commit -a -m "adding first file to the project"
 git push origin 
 ```
-Finally refresh http://raspberry.skynet/gitweb to test if the new file has been uploaded correctly!
+Finally refresh http://raspberry.skynet/gitweb to test if the new file ```HELLO_WORLD.TXT`` has been uploaded correctly!
 
 
 In summary now if you want to create a new repository on your git server, log in on the git server as user git, then if your new repo is called 
