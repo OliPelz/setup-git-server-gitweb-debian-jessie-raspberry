@@ -73,9 +73,9 @@ git add HELLO_WORLD.TXT
 git commit -a -m "adding first file to the project"
 git push origin 
 ```
-Finally refresh http://raspberry.skynet/gitweb to test if the new file ```HELLO_WORLD.TXT`` has been uploaded correctly!
+Finally refresh http://raspberry.skynet/gitweb to test if the new file ```HELLO_WORLD.TXT``` has been uploaded correctly!
 
-
+# Summary
 In summary now if you want to create a new repository on your git server, log in on the git server as user git, then if your new repo is called 
 ```tha_new_repoz_proj``` do:
 ```bash
