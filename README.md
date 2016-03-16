@@ -9,7 +9,7 @@ apt-get update
 apt-get upgrade
 apt-get install apache2 openssh-server git gitweb vim -y
 ```
-activate cgi in order gitweb will work (cgi is disabled by default in apache2 on debian=
+activate cgi in order gitweb will work (cgi is disabled by default in apache2 on debian)
 ```bash
 a2enmod cgi
 ```
@@ -35,7 +35,7 @@ create location to store all our future repositories
 ```bash
 mkdir ~/repos/
 ```
-create our first repository and initalize as a git repos
+create our first repository called ```my_first_repo```(change accordingly) and initalize as a git repos
 ```bash
 mkdir ~/repos/my_first_repo
 cd $_
@@ -52,9 +52,8 @@ save and close the file, next start apache2:
 systemctl start apache2
 ```
 Now on any client in the same network browse to the following url to browse gitweb
-which should give you a overview with the my_first_repo listing (or whatever you called your first repos).
-use any modern web browser
-```http://raspberry.skynet/gitweb``` 
+which should give you an overview with the ```my_first_repo``` listing (or whatever you called your first repos).
+use any modern web browser ```http://raspberry.skynet/gitweb``` 
 Now for any client in the same network on the commandline to access our git server we will use SSH keys for authentication. You can do this without setting a SSH key password which will make your git server access very convenient, but using a password is recommended as it adds another layer of security. Use the following command replacing ```youremail@mailprovider.com``` with your email:
 ```bash
 ssh-keygen -C "youremail@mailprovider.com"
