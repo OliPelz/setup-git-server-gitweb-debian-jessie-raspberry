@@ -76,7 +76,7 @@ git push origin
 Finally refresh http://raspberry.skynet/gitweb to test if the new file ```HELLO_WORLD.TXT``` has been uploaded correctly!
 
 # Summary
-In summary now if you want to create a new repository on your git server, log in on the git server as user git, then if your new repo is called 
+In summary now if you want to create a new repository on your git server, log in on the git server as user ```git```, then if your new repo is called 
 ```tha_new_repoz_proj``` do:
 ```bash
 mkdir ~/repos/tha_new_repoz_proj
@@ -89,7 +89,7 @@ On any client in this network you then can clone this new repository using:
 ```bash
 git clone ssh://git@raspberry.skynet/home/git/repos/tha_new_repoz_proj
 ```
-To add new clients to SSH key authenticate to your new Git server use:
+If you have some new clients you want to add to your Git server you need to enable SSH key authentication for them:
 ```bash
 ssh-keygen -C "youremail@mailprovider.com"
 cat ~/.ssh/id_rsa.pub | ssh git@raspberry.skynet "cat >> ~/.ssh/authorized_keys"
@@ -128,7 +128,7 @@ edit the file so in the end it will look like:
 </IfDefine>
 
 ```
-Now add a new authorization user, we will use git for our purpose (you can use any username you would like):
+Now add a new authorization user, we will use ```git``` for our purpose (you can use any username you would like):
 ```bash
 htpasswd -c /usr/share/gitweb/.htpasswd git
 ```
